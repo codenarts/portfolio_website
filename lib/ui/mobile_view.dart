@@ -120,6 +120,25 @@ class MobileView extends StatelessWidget {
                               child: Material(
                                 color: Colors.transparent,
                                 child: IconButton(
+                                  tooltip: "Visit My Creations on Behance",
+                                  onPressed: () async {
+                                    var url =
+                                        "https://www.behance.net/parulrathaur";
+                                    if (await canLaunchUrlString(url)) {
+                                      await launchUrlString(url);
+                                    }
+                                  },
+                                  icon: Image.network(
+                                      "https://img.icons8.com/ios-filled/48/behance.png"),
+                                  iconSize: 48,
+                                ),
+                              ),
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: Material(
+                                color: Colors.transparent,
+                                child: IconButton(
                                   tooltip: "See My Projects on Github",
                                   onPressed: () async {
                                     var url = "https://github.com/codenarts";
